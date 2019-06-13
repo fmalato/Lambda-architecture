@@ -1,0 +1,4 @@
+worker-id: fed1162b-22eb-49d1-9a37-ccd662e5ee19
+logs.users: []
+logs.groups: []
+topology.submitter.user: root
