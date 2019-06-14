@@ -155,6 +155,7 @@ public class TwitterStreamSpout implements IRichSpout {
 
         this.tweetStream = new TwitterStreamFactory(cbuilder.build()).getInstance();
         this.tweetStream.addListener(listener);
+        this.tweetStream.sample();
 
     }
 

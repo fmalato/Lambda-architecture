@@ -8,6 +8,7 @@ import org.apache.storm.tuple.Values;
 
 import twitter4j.Status;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class RetweetTextExtractorBolt implements IRichBolt {
@@ -26,6 +27,7 @@ public class RetweetTextExtractorBolt implements IRichBolt {
         boolean isRetweet = status.isRetweet();
         String retweetScreenName = "";
         String retweetUserName = "";
+
 
         if(isRetweet) {
             Status retweet = status.getRetweetedStatus();
