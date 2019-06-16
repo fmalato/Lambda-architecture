@@ -4,6 +4,7 @@ import org.apache.storm.topology.IRichSpout;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
+import org.apache.storm.tuple.Values;
 import org.apache.storm.utils.Utils;
 
 import java.io.BufferedReader;
@@ -64,16 +65,20 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
         Random random = new Random();
         int millis = random.nextInt(30) + 10;
         Utils.sleep(millis);
+        String[] lineArray = new String[]{"NA", "NA", "NA", "NA", "NA", "NA"};
 
         if(lineBufferItr.hasNext()) {
             String currentLine = (String)this.lineBufferItr.next();
             try {
-                String[] lineArray = currentLine.split(",");
-                Tweet tweet = new Tweet(lineArray[0], lineArray[1], lineArray[2]);
+                lineArray = currentLine.split(",");
+                // Format: 0 - polarity, 1 - id, 2 - date, 3 - query, 4 - user, 5 - text
+
             } catch(Exception e) {
                 e.printStackTrace();
             }
         }
+
+        this.collector.emit(new Values(lineArray[1], lineArray[2], lineArray[5]));
 
     }
 
@@ -89,7 +94,7 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("text", "date", "timestamp"));
+        outputFieldsDeclarer.declare(new Fields("tweet-id", "date", "text"));
     }
 
     @Override
