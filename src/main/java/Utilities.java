@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Utilities {
 
-    public static int getScore(ArrayList<Float> values) {
+    public static Double getScore(ArrayList<Double> values) {
 
-        int score = 0;
+        Double score = 0.0;
 
         for(int i = 0; i < values.size(); i++) {
             if(i == 1 || i == 2 || i == 4 || i == 5 || i == 7) {

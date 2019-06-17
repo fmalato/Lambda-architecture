@@ -18,7 +18,6 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
     private SpoutOutputCollector collector;
     private ArrayList<String> lineBuffer;
     private Iterator lineBufferItr;
-    private Utilities utils = new Utilities();
 
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
@@ -69,6 +68,9 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
         if(lineBufferItr.hasNext()) {
             String currentLine = (String)this.lineBufferItr.next();
+            if(currentLine == null) {
+                currentLine = "NA, NA, NA, NA, NA, NA";
+            }
             try {
                 lineArray = currentLine.split(",");
                 // Format: 0 - polarity, 1 - id, 2 - date, 3 - query, 4 - user, 5 - text
@@ -76,6 +78,9 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
             } catch(Exception e) {
                 e.printStackTrace();
             }
+        }
+        else {
+            lineArray = new String[]{"NA", "NA", "NA", "NA", "NA", "NA"};
         }
 
         this.collector.emit(new Values(lineArray[1], lineArray[2], lineArray[5]));
@@ -94,6 +99,7 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
+        // TODO: dai json di flume prendere solo il campo "text" (jsonObj.get("text"))
         outputFieldsDeclarer.declare(new Fields("tweet-id", "date", "text"));
     }
 
