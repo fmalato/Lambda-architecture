@@ -2,6 +2,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.util.Bytes;
+import org.apache.storm.hbase.bolt.mapper.SimpleHBaseMapper;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
@@ -58,18 +59,31 @@ public class OfflineTweetWriterBolt implements IRichBolt {
         Integer score = (Integer)tuple.getValueByField("score");
         String record = score.toString();
 
+        int veryPositive = 0;
+        int positive = 0;
+        int neutral = 0;
+        int negative = 0;
+        int veryNegative = 0;
+
         String sentiment = "Neutral";
-        if(score > 0 && score < 3) {
+        if(score > 0 && score <= 3) {
             sentiment = "Positive";
+            positive++;
         }
         else if(score > 3) {
             sentiment = " VeryPositive";
+            veryPositive++;
         }
-        else if(score < 0 && score > -3) {
+        else if(score < 0 && score >= -3) {
             sentiment = "Negative";
+            negative++;
         }
         else if(score < -3) {
             sentiment = "VeryNegative";
+            veryNegative++;
+        }
+        else {
+            neutral++;
         }
 
         try {
@@ -95,7 +109,8 @@ public class OfflineTweetWriterBolt implements IRichBolt {
             String result = Integer.toString(oldValue);
             put.addColumn(Bytes.toBytes("number"), Bytes.toBytes("value"), Bytes.toBytes(result));
 
-
+            Table table = ConnectionFactory.createConnection(configuration).getTable(TableName.valueOf(queryString));
+            table.put(put);
 
         } catch (IOException e) {
             e.printStackTrace();
