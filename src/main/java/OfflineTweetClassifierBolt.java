@@ -53,7 +53,7 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
             }
             while(iteratorIt.hasNext()) {
                 String currentKey = iteratorIt.next().toString();
-                ArrayList<Double> values = (ArrayList<Double>) jsonObj.get(currentKey);
+                ArrayList<Double> values = (ArrayList<Double>) jsonObjIt.get(currentKey);
                 Double doubleScore = Utilities.getScore(values);
                 int score = doubleScore.intValue();
                 this.vocabularyIt.add(new VocabularyEntry(currentKey, score));
@@ -72,7 +72,11 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
     @Override
     public void execute(Tuple tuple) {
 
-        String[] words = (String[]) tuple.getValueByField("words");
+        String text = (String)tuple.getValueByField("text");
+        String[] words = text.split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].replaceAll("[^\\w]", "");
+        }
         int score = 0;
 
         for (String word : words) {

@@ -19,12 +19,9 @@ import twitter4j.auth.AccessToken;
 public class OfflineTwitterStreamSpout implements IRichSpout {
 
     private SpoutOutputCollector collector;
-    private ArrayList<String> lineBuffer;
-    private Iterator lineBufferItr;
-    private Query query = new Query("ciao");
+    private Query query = new Query("Trump");
     private Twitter twitter;
-    private ArrayList<String> tweets;
-    private Iterator itr;
+    private String last;
 
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
@@ -33,12 +30,11 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
         twitter = new TwitterFactory().getInstance();
 
-        twitter.setOAuthConsumer("IrC5S6W23p9WnzBNy9ouj23OM", "BC8qdmaflt6pDD5fkkqioXC6xEHpwHAaGCQmmPjgNN1ao26Y2s");
-        twitter.setOAuthAccessToken(new AccessToken("821625398-d42nC6dpMQnd0fmpXAj3AQr4pbObS4uHk6rCrTpj",
-                "ZCglcVVLbbOvyJ3x55Z3UIvOSiVqzGXw6kWBt0yc0jTlO"));
+        twitter.setOAuthConsumer("JBAbc7FNeim1R3HjoagrTJTcO", "V61L1iZX5XjLWPB5hP1R5aN8wrIag6i6Ko4PQLUm0yk5a5a12q");
+        twitter.setOAuthAccessToken(new AccessToken("1121726044229328896-Bece1mGPP4osyYqxLEXVxjfGuEt4rb",
+                "s5sjsYWHVoIukjfdGPYsSP270w7160BO6If9YrE7DbO50"));
 
-        this.tweets = new ArrayList<String>();
-        this.itr = tweets.iterator();
+        this.last = " ";
 
     }
 
@@ -62,16 +58,17 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
         Random random = new Random();
         int millis = random.nextInt(30) + 10;
-        Utils.sleep(millis);
+        Utils.sleep(5000);
 
         try {
             QueryResult result;
             result = twitter.search(query);
+            List<Status> tweets = result.getTweets();
 
-            for (Status tweet : result.getTweets()) {
-                this.tweets.add(tweet.getText());
-                System.out.println("@" + tweet.getUser().getScreenName() + " - " + tweet.getText());
-                collector.emit(new Values(itr.next()));
+            if(!last.equals(tweets.get(0).getText())) {
+                last = tweets.get(0).getText();
+                System.out.println("NEW: " + tweets.get(0).getText());
+                collector.emit(new Values(tweets.get(0).getText()));
             }
         } catch (TwitterException te) {
             te.printStackTrace();

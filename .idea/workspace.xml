@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5633704f-886f-45fc-bab7-0526862af1e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileWriterBolt.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OfflineTweetTopology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OfflineTweetTopology.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OfflineTwitterStreamSpout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OfflineTwitterStreamSpout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RetweetTextExtractorBolt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TweetDetailsManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TweetTextExtractorBolt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TwitterSentimentTopology.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TwitterStreamSpout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FileDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FileWriterBolt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Storm_sentiment.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/RetweetTextExtractorBolt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TweetDetailsManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TweetTextExtractorBolt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TwitterSentimentTopology$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TwitterSentimentTopology.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TwitterStreamSpout$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TwitterStreamSpout.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,33 +24,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTwitterStreamSpout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3740#3741#0" expanded="true" />
-                <element signature="e#3767#3768#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+            <state relative-caret-position="315">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,32 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Utilities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,20 +48,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTwitterStreamSpout.java">
+        <entry file="file://$PROJECT_DIR$/db.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="62" column="37" lean-forward="true" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3619#3620#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -170,14 +109,15 @@
         <option value="$PROJECT_DIR$/src/main/java/ScoreVocabulary.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utilities.java" />
         <option value="$PROJECT_DIR$/data_debug.csv" />
-        <option value="$PROJECT_DIR$/db.txt" />
         <option value="$PROJECT_DIR$/src/main/java/TwitterSentimentTopology.java" />
         <option value="$PROJECT_DIR$/src/main/java/TwitterStreamSpout.java" />
-        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetTopology.java" />
-        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OnlineHDFSSpout.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java" />
+        <option value="$PROJECT_DIR$/db.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetTopology.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/OfflineTwitterStreamSpout.java" />
       </list>
     </option>
@@ -197,10 +137,11 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,36 +171,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Demo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Storm-sentiment" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="Demo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Storm-sentiment" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Demo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Storm-sentiment" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Demo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="Storm-sentiment" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,6 +211,7 @@
   <component name="RunManager" selected="Application.OfflineTweetTopology">
     <configuration name="OfflineTweetTopology" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OfflineTweetTopology" />
+      <module name="Storm_sentiment" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -310,10 +223,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.OfflineTweetTopology" />
-      <item itemvalue="Application.TwitterSentimentTopology" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.OfflineTweetTopology" />
@@ -337,7 +246,8 @@
       <workItem from="1560593140678" duration="4519000" />
       <workItem from="1560616639419" duration="2982000" />
       <workItem from="1560694105587" duration="10086000" />
-      <workItem from="1560758396708" duration="8018000" />
+      <workItem from="1560758396708" duration="11878000" />
+      <workItem from="1560843823547" duration="10689000" />
     </task>
     <task id="LOCAL-00001" summary="What the hell is going on">
       <created>1560449381894</created>
@@ -367,17 +277,23 @@
       <option name="project" value="LOCAL" />
       <updated>1560705656927</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Offline pipeline works">
+      <created>1560767876481</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560767876481</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63818000" />
+    <option name="totallyTimeSpent" value="74559000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -386,15 +302,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3272727" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.3479452" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.55417275" weight="0.41369864" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.34876034" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.55417275" weight="0.41487604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.44582725" side_tool="true" weight="0.39968154" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32465753" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32561985" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -410,7 +326,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24158126" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -418,16 +334,16 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3272727" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.34876034" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.55417275" weight="0.41487604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32857144" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.44582725" side_tool="true" weight="0.39968154" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32561985" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -451,16 +367,29 @@
     <MESSAGE value="No more errors, just a NullPointerException to be caught" />
     <MESSAGE value="Messed up with the Tuple class, finding a workaround" />
     <MESSAGE value="&quot;Offline&quot; classes implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Offline&quot; classes implemented." />
+    <MESSAGE value="Offline pipeline works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Offline pipeline works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java</url>
-          <line>72</line>
+          <url>file://$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java</url>
+          <line>59</line>
           <properties />
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java</url>
+          <line>82</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -477,24 +406,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/tuple/Values.class" />
-    <entry file="jar://$USER_HOME$/hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/utils/DisruptorQueue.class" />
+    <entry file="jar://$PROJECT_DIR$/../../hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/tuple/Values.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/utils/DisruptorQueue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="185" selection-start-line="185" selection-end-line="185" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/RetweetTextExtractorBolt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1673#1674#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ciao.java" />
-    <entry file="jar://$USER_HOME$/hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/daemon/executor$fn__10727$fn__10742.class" />
+    <entry file="file://$PROJECT_DIR$/ciao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/daemon/executor$fn__10727$fn__10742.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="456" selection-start-line="456" selection-end-line="456" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FileDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
           <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+          <folding>
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#1292#1293#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1626#1627#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
+            <element signature="e#1966#1967#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+            <element signature="e#2164#2165#0" expanded="true" />
+            <element signature="e#2222#2223#0" expanded="true" />
+            <element signature="e#2366#2367#0" expanded="true" />
+            <element signature="e#2424#2425#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -502,6 +489,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -509,88 +499,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ScoreVocabulary.java" />
+    <entry file="file://$PROJECT_DIR$/vocabularyEng.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/VocabularyEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="255">
           <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Tweet.java" />
-    <entry file="jar://$USER_HOME$/hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/util$async_loop$fn__553.class" />
-    <entry file="file://$PROJECT_DIR$/data_debug.csv" />
-    <entry file="jar://$USER_HOME$/hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/daemon/executor$fn__10727$fn__10742$fn__10773.class" />
-    <entry file="jar://$USER_HOME$/hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/daemon/executor$fn__10795$tuple_action_fn__10797.class" />
+    <entry file="file://$PROJECT_DIR$/user_tweets.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
+          <column index="0" width="100" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_debug.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="159" selection-start-line="4" selection-start-column="159" selection-end-line="4" selection-end-column="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/daemon/executor$fn__10727$fn__10742$fn__10773.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="419" selection-start-line="419" selection-end-line="419" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/daemon/executor$fn__10795$tuple_action_fn__10797.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="244" selection-start-line="244" selection-end-line="244" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TwitterSentimentTopology.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        <state relative-caret-position="660">
+          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.csv" />
-    <entry file="file://$PROJECT_DIR$/vocabularyEng.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/data.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="191">
+          <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vocabularyIt.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_tweets.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Storm_sentiment.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3740#3741#0" expanded="true" />
-            <element signature="e#3767#3768#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TwitterStreamSpout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        <state relative-caret-position="2055">
+          <caret line="153" column="92" selection-start-line="153" selection-start-column="92" selection-end-line="153" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3067#3068#0" expanded="true" />
@@ -599,23 +591,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java">
+    <entry file="jar://$PROJECT_DIR$/../../hadoop/storm-1.2.2/lib/storm-core-1.2.2.jar!/org/apache/storm/util$async_loop$fn__553.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        <state relative-caret-position="109">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OnlineHDFSSpout.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetTextExtractorBolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetClassifierBolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetWriterBolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3619#3620#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTweetTopology.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -624,11 +659,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/OfflineTwitterStreamSpout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="62" column="37" lean-forward="true" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+        <state relative-caret-position="315">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
