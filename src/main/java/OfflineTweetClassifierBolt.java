@@ -51,6 +51,13 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
                 int score = doubleScore.intValue();
                 this.vocabularyEng.add(new VocabularyEntry(currentKey, score));
             }
+            while(iteratorIt.hasNext()) {
+                String currentKey = iteratorIt.next().toString();
+                ArrayList<Double> values = (ArrayList<Double>) jsonObj.get(currentKey);
+                Double doubleScore = Utilities.getScore(values);
+                int score = doubleScore.intValue();
+                this.vocabularyIt.add(new VocabularyEntry(currentKey, score));
+            }
 
         } catch(FileNotFoundException e) {
             e.printStackTrace();
