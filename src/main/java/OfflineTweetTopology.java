@@ -12,13 +12,13 @@ public class OfflineTweetTopology {
         topologyBuilder.setSpout("offline-tweet-spout", new OfflineTwitterStreamSpout());
 
         topologyBuilder.setBolt("text-extractor-bolt", new OfflineTweetTextExtractorBolt())
-                        .fieldsGrouping("offline-tweet-spout", new Fields("tweet-id", "date", "text"));
+                        .fieldsGrouping("offline-tweet-spout", new Fields("text"));
 
         topologyBuilder.setBolt("tweet-classif-bolt", new OfflineTweetClassifierBolt())
-                        .fieldsGrouping("text-extractor-bolt", new Fields("tweet-id", "date", "words"));
+                        .fieldsGrouping("text-extractor-bolt", new Fields("words"));
 
         topologyBuilder.setBolt("tweet-writer-bolt", new OfflineTweetWriterBolt())
-                        .fieldsGrouping("tweet-classif-bolt", new Fields("tweet-id", "date", "text", "score"));
+                        .fieldsGrouping("tweet-classif-bolt", new Fields("score"));
 
         Config config = new Config();
         final LocalCluster cluster = new LocalCluster();

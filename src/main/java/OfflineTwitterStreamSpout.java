@@ -13,33 +13,32 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+import twitter4j.*;
+import twitter4j.auth.AccessToken;
+
 public class OfflineTwitterStreamSpout implements IRichSpout {
 
     private SpoutOutputCollector collector;
     private ArrayList<String> lineBuffer;
     private Iterator lineBufferItr;
+    private Query query = new Query("ciao");
+    private Twitter twitter;
+    private ArrayList<String> tweets;
+    private Iterator itr;
 
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
 
         this.collector = spoutOutputCollector;
-        String dataPath = "data.csv";
-        this.lineBuffer = new ArrayList<String>();
-        String line;
 
-        try {
-            BufferedReader buffReader = new BufferedReader(new FileReader(dataPath));
-            do {
-                line = buffReader.readLine();
-                lineBuffer.add(line);
-            }
-            while(line != null);
-        }catch(FileNotFoundException e) {
-            e.printStackTrace();
-        }catch(IOException e) {
-            e.printStackTrace();
-        }
-        this.lineBufferItr = lineBuffer.iterator();
+        twitter = new TwitterFactory().getInstance();
+
+        twitter.setOAuthConsumer("IrC5S6W23p9WnzBNy9ouj23OM", "BC8qdmaflt6pDD5fkkqioXC6xEHpwHAaGCQmmPjgNN1ao26Y2s");
+        twitter.setOAuthAccessToken(new AccessToken("821625398-d42nC6dpMQnd0fmpXAj3AQr4pbObS4uHk6rCrTpj",
+                "ZCglcVVLbbOvyJ3x55Z3UIvOSiVqzGXw6kWBt0yc0jTlO"));
+
+        this.tweets = new ArrayList<String>();
+        this.itr = tweets.iterator();
 
     }
 
@@ -64,26 +63,21 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
         Random random = new Random();
         int millis = random.nextInt(30) + 10;
         Utils.sleep(millis);
-        String[] lineArray = new String[]{"NA", "NA", "NA", "NA", "NA", "NA"};
 
-        if(lineBufferItr.hasNext()) {
-            String currentLine = (String)this.lineBufferItr.next();
-            if(currentLine == null) {
-                currentLine = "NA, NA, NA, NA, NA, NA";
+        try {
+            QueryResult result;
+            result = twitter.search(query);
+
+            for (Status tweet : result.getTweets()) {
+                this.tweets.add(tweet.getText());
+                System.out.println("@" + tweet.getUser().getScreenName() + " - " + tweet.getText());
+                collector.emit(new Values(itr.next()));
             }
-            try {
-                lineArray = currentLine.split(",");
-                // Format: 0 - polarity, 1 - id, 2 - date, 3 - query, 4 - user, 5 - text
-
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
+        } catch (TwitterException te) {
+            te.printStackTrace();
+            System.out.println("Failed to search tweets: " + te.getMessage());
+            System.exit(-1);
         }
-        else {
-            lineArray = new String[]{"NA", "NA", "NA", "NA", "NA", "NA"};
-        }
-
-        this.collector.emit(new Values(lineArray[1], lineArray[2], lineArray[5]));
 
     }
 
@@ -99,8 +93,7 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        // TODO: dai json di flume prendere solo il campo "text" (jsonObj.get("text"))
-        outputFieldsDeclarer.declare(new Fields("tweet-id", "date", "text"));
+        outputFieldsDeclarer.declare(new Fields("text"));
     }
 
     @Override

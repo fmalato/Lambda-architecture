@@ -31,11 +31,8 @@ public class OfflineTweetWriterBolt implements IRichBolt {
     @Override
     public void execute(Tuple tuple) {
 
-        String id = tuple.getStringByField("tweet-id");
-        String date = tuple.getStringByField("date");
-        String text = tuple.getStringByField("text");
         Integer score = (Integer)tuple.getValueByField("score");
-        String record = id + ", " + date + ", " + text + ", " + score.toString() + "\n";
+        String record = score.toString() + "\n";
 
         try {
             this.writer.write(record);
@@ -54,7 +51,7 @@ public class OfflineTweetWriterBolt implements IRichBolt {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("tweet-id", "date", "text", "score"));
+        outputFieldsDeclarer.declare(new Fields("score"));
     }
 
     @Override

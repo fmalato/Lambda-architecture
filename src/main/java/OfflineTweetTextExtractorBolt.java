@@ -22,12 +22,10 @@ public class OfflineTweetTextExtractorBolt implements IRichBolt {
     @Override
     public void execute(Tuple tuple) {
 
-        String id = tuple.getStringByField("tweet-id");
-        String date = tuple.getStringByField("date");
         String text = tuple.getStringByField("text");
         String[] words = text.split(" ");
 
-        this.collector.emit(new Values(id, date, words));
+        this.collector.emit(new Values(words));
 
     }
 
@@ -39,7 +37,7 @@ public class OfflineTweetTextExtractorBolt implements IRichBolt {
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
 
-        outputFieldsDeclarer.declare(new Fields("tweet-id", "date", "words"));
+        outputFieldsDeclarer.declare(new Fields("words"));
 
     }
 

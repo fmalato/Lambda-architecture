@@ -51,13 +51,7 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
                 int score = doubleScore.intValue();
                 this.vocabularyEng.add(new VocabularyEntry(currentKey, score));
             }
-            while(iteratorIt.hasNext()) {
-                String currentKey = iteratorIt.next().toString();
-                ArrayList<Double> values = (ArrayList<Double>) jsonObj.get(currentKey);
-                Double doubleScore = Utilities.getScore(values);
-                int score = doubleScore.intValue();
-                this.vocabularyIt.add(new VocabularyEntry(currentKey, score));
-            }
+
         } catch(FileNotFoundException e) {
             e.printStackTrace();
         } catch(IOException e) {
@@ -71,8 +65,6 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
     @Override
     public void execute(Tuple tuple) {
 
-        String id = tuple.getStringByField("tweet-id");
-        String date = tuple.getStringByField("date");
         String[] words = (String[]) tuple.getValueByField("words");
         int score = 0;
 
@@ -85,7 +77,7 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
             }
         }
 
-        this.collector.emit(new Values(id, date, Arrays.toString(words), score));
+        this.collector.emit(new Values(score));
 
     }
 
@@ -96,7 +88,7 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("tweet-id", "date", "text", "score"));
+        outputFieldsDeclarer.declare(new Fields("score"));
     }
 
     @Override
