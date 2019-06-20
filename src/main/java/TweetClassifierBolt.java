@@ -1,4 +1,3 @@
-import com.esotericsoftware.kryo.util.Util;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
@@ -6,26 +5,28 @@ import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
-import org.json.simple.JSONArray;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
-public class OfflineTweetClassifierBolt implements IRichBolt {
+public class TweetClassifierBolt implements IRichBolt {
 
     private OutputCollector collector;
     private ArrayList<VocabularyEntry> vocabularyEng;
     private ArrayList<VocabularyEntry> vocabularyIt;
 
+    /*** The prepare() method provide an initialization of the vocabularies, each as an ArrayList of VocabularyEntries.
+     * We have chosen this method to avoid multiple calls to the JSONObject.get() method and to have a clearer structure
+     * of the objects.
+     */
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
@@ -68,6 +69,11 @@ public class OfflineTweetClassifierBolt implements IRichBolt {
         }
 
     }
+
+    /*** The TweetClassifierBolt splits the retrieved tweet text in single words, getting also rid of the punctuation
+     * and of the special characters. Each word is then compared with the vocabulary entries. If there's a match, the
+     * Utilities.returnScore() call updates the word's score. Otherwise, the score is set to zero.
+     */
 
     @Override
     public void execute(Tuple tuple) {

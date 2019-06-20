@@ -3,20 +3,24 @@ import org.apache.storm.LocalCluster;
 import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
 
-public class OfflineTweetTopology {
+public class TweetTopology {
 
-    public static String queryString = "Renzi";
+    public final static String queryString = "computer";
+
+    /*** A simple initialization of the complete topology. The static variable queryString is used from every
+     * spout and bolt.
+     */
 
     public static void main(String[] args) {
 
         TopologyBuilder topologyBuilder = new TopologyBuilder();
 
-        topologyBuilder.setSpout("offline-tweet-spout", new OfflineTwitterStreamSpout());
+        topologyBuilder.setSpout("tweet-spout", new TwitterStreamSpout());
 
-        topologyBuilder.setBolt("tweet-classif-bolt", new OfflineTweetClassifierBolt())
-                        .fieldsGrouping("offline-tweet-spout", new Fields("text"));
+        topologyBuilder.setBolt("tweet-classif-bolt", new TweetClassifierBolt())
+                        .fieldsGrouping("tweet-spout", new Fields("text"));
 
-        topologyBuilder.setBolt("tweet-writer-bolt", new OfflineTweetWriterBolt())
+        topologyBuilder.setBolt("tweet-writer-bolt", new TweetWriterBolt())
                         .fieldsGrouping("tweet-classif-bolt", new Fields("score"));
 
         Config config = new Config();

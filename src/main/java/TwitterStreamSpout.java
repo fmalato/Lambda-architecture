@@ -3,26 +3,26 @@ import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichSpout;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
-import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 import org.apache.storm.utils.Utils;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
-public class OfflineTwitterStreamSpout implements IRichSpout {
+public class TwitterStreamSpout implements IRichSpout {
 
     private SpoutOutputCollector collector;
-    private Query query = new Query("Trump");
+    private Query query = new Query(TweetTopology.queryString);
     private Twitter twitter;
     private String last;
 
+    /***
+     * Just set some parameters of the Twitter object, in order to call the right application. The tweets language
+     * can be set using the this.query.setLang() call. Since we have only two vocabularies, we recommend you to
+     * choose between "it" and "en". Otherwise, the program will fetch tweets from all around the world.
+     */
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
 
@@ -35,6 +35,9 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
                 "s5sjsYWHVoIukjfdGPYsSP270w7160BO6If9YrE7DbO50"));
 
         this.last = " ";
+
+        // it = italian, en = english
+        this.query.setLang("it");
 
     }
 
@@ -53,11 +56,14 @@ public class OfflineTwitterStreamSpout implements IRichSpout {
 
     }
 
+    /***
+     * Since the Twitter API allows a maximum of 255 calls in a 15 minutes time span, we need to slow down the
+     * program: After a call to the API, it sleeps for 5 seconds. To avoid repetitions and errors, the tweet is
+     * emitted to the bolts only if it hasn't been emitted previously.
+     */
     @Override
     public void nextTuple() {
 
-        Random random = new Random();
-        int millis = random.nextInt(30) + 10;
         Utils.sleep(5000);
 
         try {

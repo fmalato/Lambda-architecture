@@ -2,7 +2,6 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.util.Bytes;
-import org.apache.storm.hbase.bolt.mapper.SimpleHBaseMapper;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
@@ -15,13 +14,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class OfflineTweetWriterBolt implements IRichBolt {
+public class TweetWriterBolt implements IRichBolt {
 
     private OutputCollector collector;
     private BufferedWriter writer;
     private Configuration configuration;
     private HTable hTable;
-    private String queryString = "Trump";
+
+    /*** The prepare() method of this class initialized the needed HBase objects. The HTableDescriptor object is in
+     * charge of the table setup, which name is given by the queryString variable. After that, the HBaseAdmin creates
+     * the table.
+     */
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
@@ -36,13 +39,13 @@ public class OfflineTweetWriterBolt implements IRichBolt {
         try {
             configuration = new HBaseConfiguration();
             HBaseAdmin admin = new HBaseAdmin(configuration);
-            HTableDescriptor tableDescriptor = new HTableDescriptor(TableName.valueOf(queryString));
+            HTableDescriptor tableDescriptor = new HTableDescriptor(TableName.valueOf(TweetTopology.queryString));
             tableDescriptor.addFamily(new HColumnDescriptor("number"));
 
-            if(!admin.tableExists(TableName.valueOf(queryString))) {
+            if(!admin.tableExists(TableName.valueOf(TweetTopology.queryString))) {
                 admin.createTable(tableDescriptor);
             }
-            hTable = new HTable(configuration, queryString);
+            hTable = new HTable(configuration, TweetTopology.queryString);
         } catch (MasterNotRunningException e) {
             e.printStackTrace();
         } catch (ZooKeeperConnectionException e) {
@@ -53,37 +56,28 @@ public class OfflineTweetWriterBolt implements IRichBolt {
 
     }
 
+    /*** Based on the score computed from the TweetClassifierBolt, this method gives the correct sentiment and
+     * updates the HBase table.
+     */
+
     @Override
     public void execute(Tuple tuple) {
 
         Integer score = (Integer)tuple.getValueByField("score");
         String record = score.toString();
 
-        int veryPositive = 0;
-        int positive = 0;
-        int neutral = 0;
-        int negative = 0;
-        int veryNegative = 0;
-
         String sentiment = "Neutral";
         if(score > 0 && score <= 3) {
             sentiment = "Positive";
-            positive++;
         }
         else if(score > 3) {
             sentiment = " VeryPositive";
-            veryPositive++;
         }
         else if(score < 0 && score >= -3) {
             sentiment = "Negative";
-            negative++;
         }
         else if(score < -3) {
             sentiment = "VeryNegative";
-            veryNegative++;
-        }
-        else {
-            neutral++;
         }
 
         try {
@@ -109,7 +103,8 @@ public class OfflineTweetWriterBolt implements IRichBolt {
             String result = Integer.toString(oldValue);
             put.addColumn(Bytes.toBytes("number"), Bytes.toBytes("value"), Bytes.toBytes(result));
 
-            Table table = ConnectionFactory.createConnection(configuration).getTable(TableName.valueOf(queryString));
+            Table table = ConnectionFactory.createConnection(configuration)
+                    .getTable(TableName.valueOf(TweetTopology.queryString));
             table.put(put);
 
         } catch (IOException e) {
