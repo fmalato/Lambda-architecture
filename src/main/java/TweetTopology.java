@@ -5,13 +5,21 @@ import org.apache.storm.tuple.Fields;
 
 public class TweetTopology {
 
-    public final static String queryString = "computer";
+    public static String queryString = null;
 
     /*** A simple initialization of the complete topology. The static variable queryString is used from every
      * spout and bolt.
      */
 
     public static void main(String[] args) {
+
+        if (args.length > 0)
+            queryString = args[0];
+
+        if (queryString == null) {
+            System.out.println("Please insert a query word");
+            return;
+        }
 
         TopologyBuilder topologyBuilder = new TopologyBuilder();
 

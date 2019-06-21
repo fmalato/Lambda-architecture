@@ -19,7 +19,7 @@ public class TweetWriterBolt implements IRichBolt {
     private OutputCollector collector;
     private BufferedWriter writer;
     private Configuration configuration;
-    private HTable hTable;
+    private Table table;
 
     /*** The prepare() method of this class initialized the needed HBase objects. The HTableDescriptor object is in
      * charge of the table setup, which name is given by the queryString variable. After that, the HBaseAdmin creates
@@ -37,15 +37,18 @@ public class TweetWriterBolt implements IRichBolt {
         }
 
         try {
-            configuration = new HBaseConfiguration();
-            HBaseAdmin admin = new HBaseAdmin(configuration);
+            configuration = HBaseConfiguration.create();
+            Connection connection = ConnectionFactory.createConnection(configuration);
+            Admin admin  = connection.getAdmin();
+
             HTableDescriptor tableDescriptor = new HTableDescriptor(TableName.valueOf(TweetTopology.queryString));
             tableDescriptor.addFamily(new HColumnDescriptor("number"));
 
             if(!admin.tableExists(TableName.valueOf(TweetTopology.queryString))) {
                 admin.createTable(tableDescriptor);
             }
-            hTable = new HTable(configuration, TweetTopology.queryString);
+            table = connection.getTable(TableName.valueOf(TweetTopology.queryString));
+
         } catch (MasterNotRunningException e) {
             e.printStackTrace();
         } catch (ZooKeeperConnectionException e) {
@@ -90,7 +93,7 @@ public class TweetWriterBolt implements IRichBolt {
 
         Get g = new Get(Bytes.toBytes(sentiment));
         try {
-            Result resultTable = hTable.get(g);
+            Result resultTable = table.get(g);
             byte[] oldByteValue = resultTable.getValue(Bytes.toBytes("number"), Bytes.toBytes("value"));
 
             int oldValue = 1;
@@ -114,9 +117,7 @@ public class TweetWriterBolt implements IRichBolt {
     }
 
     @Override
-    public void cleanup() {
-
-    }
+    public void cleanup() { }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {

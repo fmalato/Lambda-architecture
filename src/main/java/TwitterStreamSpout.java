@@ -30,9 +30,9 @@ public class TwitterStreamSpout implements IRichSpout {
 
         twitter = new TwitterFactory().getInstance();
 
-        twitter.setOAuthConsumer("JBAbc7FNeim1R3HjoagrTJTcO", "V61L1iZX5XjLWPB5hP1R5aN8wrIag6i6Ko4PQLUm0yk5a5a12q");
-        twitter.setOAuthAccessToken(new AccessToken("1121726044229328896-Bece1mGPP4osyYqxLEXVxjfGuEt4rb",
-                "s5sjsYWHVoIukjfdGPYsSP270w7160BO6If9YrE7DbO50"));
+        twitter.setOAuthConsumer("IrC5S6W23p9WnzBNy9ouj23OM", "BC8qdmaflt6pDD5fkkqioXC6xEHpwHAaGCQmmPjgNN1ao26Y2s");
+        twitter.setOAuthAccessToken(new AccessToken("821625398-d42nC6dpMQnd0fmpXAj3AQr4pbObS4uHk6rCrTpj",
+                "ZCglcVVLbbOvyJ3x55Z3UIvOSiVqzGXw6kWBt0yc0jTlO"));
 
         this.last = " ";
 
