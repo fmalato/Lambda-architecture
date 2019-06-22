@@ -6,6 +6,7 @@ import org.apache.storm.tuple.Fields;
 public class TweetTopology {
 
     public static String queryString = null;
+    public static String language = "it";
 
     /*** A simple initialization of the complete topology. The static variable queryString is used from every
      * spout and bolt.
@@ -20,6 +21,9 @@ public class TweetTopology {
             System.out.println("Please insert a query word");
             return;
         }
+
+        if (args.length > 1 && args[1].equals("en"))
+            language = "en";
 
         TopologyBuilder topologyBuilder = new TopologyBuilder();
 

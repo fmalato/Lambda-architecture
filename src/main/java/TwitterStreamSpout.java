@@ -37,7 +37,7 @@ public class TwitterStreamSpout implements IRichSpout {
         this.last = " ";
 
         // it = italian, en = english
-        this.query.setLang("it");
+        this.query.setLang(TweetTopology.language);
 
     }
 
