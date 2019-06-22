@@ -74,7 +74,7 @@ public class TweetWriterBolt implements IRichBolt {
             sentiment = "Positive";
         }
         else if(score > 3) {
-            sentiment = " VeryPositive";
+            sentiment = "VeryPositive";
         }
         else if(score < 0 && score >= -3) {
             sentiment = "Negative";
