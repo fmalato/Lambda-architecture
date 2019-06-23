@@ -13,7 +13,7 @@ GUI.
 ### Lambda architecture
 
 <p align="center">
-    <img width="100%" height="auto" src="https://github.com/freaky1310/Lambda-architecture/demoImages/lambda.png">
+    <img width="100%" height="auto" src="https://github.com/freaky1310/Lambda-architecture/demoImages/lambda.png.png">
 </p>
 
 ### How to use
@@ -40,9 +40,9 @@ Results are stored in **Hbase table** (named as the _query_).
 
 To consult better the tables, we provide a simple java GUI with a real time updating histogram, which is found in 
 _tablePlot_ directory. Also we use Apache **Drill**, another distributed software to visualize Hbase queries in SQL 
-style. Here some example, with _trump_ as query both for Storm and Hadoop:
+style. Here some example, with `trump` as query both for Storm and Hadoop:
 
 <p align="center">
-    <img width="40%" height="auto" src="https://github.com/freaky1310/Lambda-architecture/demoImages/trump.png">
-    <img width="40%" height="auto" src="https://github.com/freaky1310/Lambda-architecture/demoImages/trumpD.png">
+    <img width="40%" height="auto" src="demoImages/trump.png.png">
+    <img width="40%" height="auto" src="demoImages/trumpD.png">
 </p>
