@@ -13,7 +13,7 @@ GUI.
 ### Lambda architecture
 
 <p align="center">
-    <img width="100%" height="auto" src="https://github.com/freaky1310/Lambda-architecture/demoImages/lambda.png.png">
+    <img width="100%" height="auto" src="demoImages/lambda.png">
 </p>
 
 ### How to use
@@ -42,7 +42,9 @@ To consult better the tables, we provide a simple java GUI with a real time upda
 _tablePlot_ directory. Also we use Apache **Drill**, another distributed software to visualize Hbase queries in SQL 
 style. Here some example, with `trump` as query both for Storm and Hadoop:
 
+<div>
 <p align="center">
-    <img width="40%" height="auto" src="demoImages/trump.png.png">
+    <img src="demoImages/trump.png" width="40%" height="auto" >
     <img width="40%" height="auto" src="demoImages/trumpD.png">
 </p>
+</div>
