@@ -28,7 +28,7 @@ _HadoopSentimentAnalysis_ source, then:
 
     hadoop jar ts.jar TweetSentiment /datasetEn trump
 
-_datasetEn_ is tweet directory downloaded with Flume and _trump_ is the query.
+_`datasetEn`_ is tweet directory downloaded with Flume and _`trump`_ is the query.
 
 In the same way, we can execute Storm part (with Maven dependencies), contained in _StormSentimentAnalysis_ directory. 
 The different is that Storm downloads tweets in real time, thanks to _twitter4j_ java library (you need configure 
